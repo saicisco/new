@@ -1,0 +1,61 @@
+/* src/components/Hero.module.css */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.heroContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 992px) { .heroContainer { grid-template-columns: 1fr 1fr; } }
+
+.intro {
+    text-align: center;
+}
+
+@media (min-width: 992px) { .intro { text-align: left; } }
+
+.name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    color: #a5adce; /* Subtext0 */
+    margin-bottom: 2rem;
+}
+
+.socialLinks a {
+    margin: 0 0.75rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.skill {
+    background-color: #363a4f; /* Surface1 */
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #494d64; /* Surface2 */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill:hover {
+    background-color: #494d64; /* Surface2 */
+    transform: translateY(-5px);
+}

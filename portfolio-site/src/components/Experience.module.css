@@ -1,0 +1,107 @@
+/* src/components/Experience.module.css */
+.experience {
+    padding: 80px 0;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Vertical line on the left */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #494d64; /* Surface2 */
+    top: 0;
+    bottom: 0;
+    left: 15px; /* Position to the left */
+    margin-left: -1.5px;
+}
+
+.timelineItem {
+    padding: 10px 0 10px 40px; /* Adjust padding for left-aligned content */
+    position: relative;
+    width: 100%; /* Full width for single column */
+    left: 0; /* Align all items to the left */
+}
+
+/* Circular markers on the left */
+.timelineItem::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #1e2030; /* Crust */
+    border: 4px solid #ee99a0; /* Red */
+    top: 48px; /* Adjusted to align with job title */
+    left: 1px; /* Corrected horizontal alignment */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timelineContent {
+    padding: 20px 30px;
+    background-color: #1e2030; /* Crust */
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid #494d64; /* Surface2 */
+}
+
+.company {
+    color: #a5adce; /* Subtext0 */
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.duration {
+    display: block;
+    font-size: 0.9rem;
+    color: #8aadf4; /* Blue */
+    margin-bottom: 1rem;
+}
+
+.timelineContent ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.timelineContent li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.bulletPoint {
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: #ee99a0; /* Red */
+    border-radius: 50%;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 15px; /* Keep timeline bar left on small screens */
+    }
+    .timelineItem {
+        padding-left: 40px; /* Adjust padding */
+        width: 100%; /* Full width */
+    }
+    .timelineItem::after {
+        left: 5px; /* Keep marker left on small screens */
+    }
+}
