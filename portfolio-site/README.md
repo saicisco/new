@@ -1,53 +1,116 @@
-# React + TypeScript + Vite
+# Francisco Perez Leiros - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, performant portfolio website built with React 19, TypeScript, and Vite, showcasing my experience as a QA Automation Engineer.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern Stack**: Built with React 19, TypeScript, and Vite for optimal performance
+- **SEO Optimized**: Complete meta tags and Open Graph support for better discoverability
+- **Lazy Loading**: Code-splitting implementation for faster initial load times
+- **Fixed Navigation**: Sticky header with smooth scrolling between sections
+- **Fully Responsive**: Optimized for mobile, tablet, and desktop devices
+- **Type-Safe**: Full TypeScript implementation with strict type checking
+- **Modular CSS**: CSS Modules for component-scoped styling
+- **Clean Architecture**: Path aliases (@/*) and barrel exports for maintainable code
+- **Modern Experience Cards**: Professional experience displayed with company logos in clean card layout
 
-## React Compiler
+## 📦 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: CSS Modules
+- **Linting**: ESLint with TypeScript support
 
-## Expanding the ESLint configuration
+## 🛠️ Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+```bash
+git clone https://github.com/franciscoleiros/portfolio-site.git
+cd portfolio-site
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
+```bash
+npm install
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📜 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint
+
+## 🏗️ Project Structure
+
+```
+portfolio-site/
+├── src/
+│   ├── components/       # React components with CSS modules
+│   │   ├── Navigation.tsx
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Portfolio.tsx
+│   │   ├── Blog.tsx
+│   │   ├── Footer.tsx
+│   │   └── index.ts     # Barrel exports
+│   ├── types/           # TypeScript type definitions
+│   ├── App.tsx          # Main app component with lazy loading
+│   ├── main.tsx         # Application entry point
+│   └── index.css        # Global styles
+├── public/              # Static assets
+│   └── logos/          # Company logos for experience section
+├── vite.config.ts       # Vite configuration with path aliases
+├── tsconfig.json        # TypeScript configuration
+└── package.json         # Dependencies and scripts
+```
+
+## 🎨 Key Improvements Implemented
+
+1. **SEO Enhancement**: Comprehensive meta tags including Open Graph and Twitter Cards
+2. **Performance Optimization**: Lazy loading for non-critical components
+3. **Developer Experience**: Path aliases (@/*) for cleaner imports and barrel exports
+4. **Type Safety**: TypeScript interfaces for all data structures (Projects, Experience, Skills)
+5. **Fixed Navigation**: Sticky header with dark theme matching the site design
+6. **Mobile Responsive**: Fully optimized for all screen sizes with adjusted spacing and typography
+7. **Modern Experience Section**: Clean card layout with company logos and hover effects
+8. **Code Quality**: Removed unused dependencies (Bootstrap) and legacy React imports
+9. **Smooth Scrolling**: CSS-based smooth scroll behavior between sections
+10. **Professional Presentation**: Updated with actual GitHub profile and LinkedIn links
+
+## 🌐 Deployment
+
+Build the project for production:
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory, ready to be deployed to any static hosting service (Vercel, Netlify, GitHub Pages, etc.).
+
+## 👤 Author
+
+**GitHub: [saicisco](https://github.com/saicisco)
+- Francisco Perez Leiros**
+- LinkedIn: [francisco-leiros](https://www.linkedin.com/in/francisco-leiros/)
+- Email: Fran.pl@icloud.com
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+---
+
+Built with ❤️ by Francisco Perez Leiros
 import reactDom from 'eslint-plugin-react-dom'
 
 export default defineConfig([

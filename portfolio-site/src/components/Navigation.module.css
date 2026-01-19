@@ -1,0 +1,101 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(36, 39, 58, 0.95); /* Base color with transparency */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(73, 77, 100, 0.3); /* Surface2 */
+}
+
+.nav.scrolled {
+  background: rgba(36, 39, 58, 0.98); /* Base color with more opacity */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #c6a0f6; /* Mauve */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #8aadf4; /* Blue */
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navLinks a {
+  color: #cad3f5; /* Text */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #8aadf4; /* Blue */
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #8aadf4; /* Blue */
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    padding: 0.75rem 0;
+    gap: 0.5rem;
+  }
+  
+  .navLinks {
+    gap: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .logo {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navLinks {
+    gap: 0.4rem;
+    font-size: 0.75rem;
+  }
+  
+  .logo {
+    font-size: 0.85rem;
+  }
+}

@@ -1,8 +1,7 @@
 // src/components/About.tsx
-import React from 'react';
 import styles from './About.module.css';
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <section id="about" className={styles.about}>
       <div className="container">

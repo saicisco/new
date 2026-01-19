@@ -4,16 +4,35 @@
     background-color: #1e2030; /* Crust */
 }
 
+@media (max-width: 768px) {
+    .portfolio {
+        padding: 60px 0;
+    }
+}
+
 .heading {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
 }
 
+@media (max-width: 768px) {
+    .heading {
+        font-size: 1.8rem;
+    }
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
 
 .card {

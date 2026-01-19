@@ -4,10 +4,22 @@
     background-color: #1e2030; /* A slightly different dark shade (Crust) */
 }
 
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 0;
+    }
+}
+
 .heading {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 1.8rem;
+    }
 }
 
 .text {
@@ -17,4 +29,13 @@
     line-height: 1.7;
     text-align: center;
     color: #a5adce; /* Subtext0 */
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 1rem;
+        text-align: left;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+    }
 }

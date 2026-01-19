@@ -1,29 +1,32 @@
 // src/components/Portfolio.tsx
-import React from 'react';
 import styles from './Portfolio.module.css';
+import type { Project } from '@/types';
 
-const projects = [
+const projects: Project[] = [
   {
     title: "E-commerce Test Automation",
     description: "A complete test automation suite for an e-commerce platform, covering UI, API, and performance testing.",
     tech: ["Selenium", "Java", "TestNG", "RestAssured", "JMeter"],
-    link: "#"
+    link: "https://github.com/franciscoleiros",
+    github: "https://github.com/franciscoleiros"
   },
   {
     title: "CI/CD Pipeline for Mobile App",
     description: "Designed and implemented a CI/CD pipeline for a cross-platform mobile application, enabling automated testing and deployment.",
     tech: ["Appium", "Jenkins", "Docker", "Groovy"],
-    link: "#"
+    link: "https://github.com/franciscoleiros",
+    github: "https://github.com/franciscoleiros"
   },
   {
     title: "Healthcare Platform Testing",
     description: "Led QA efforts for a HIPAA-compliant healthcare platform, ensuring data integrity and security through rigorous testing.",
     tech: ["Cypress", "JavaScript", "PostgreSQL", "AWS"],
-    link: "#"
+    link: "https://github.com/franciscoleiros",
+    github: "https://github.com/franciscoleiros"
   }
 ];
 
-const Portfolio: React.FC = () => {
+const Portfolio = () => {
   return (
     <section id="portfolio" className={styles.portfolio}>
       <div className="container">
@@ -38,7 +41,7 @@ const Portfolio: React.FC = () => {
                   <span key={i} className={styles.techTag}>{t}</span>
                 ))}
               </div>
-              <a href={project.link} className={styles.link}>View Details</a>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.link}>View Project</a>
             </div>
           ))}
         </div>

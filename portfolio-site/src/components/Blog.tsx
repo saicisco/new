@@ -1,8 +1,7 @@
 // src/components/Blog.tsx
-import React from 'react';
 import styles from './Blog.module.css';
 
-const Blog: React.FC = () => {
+const Blog = () => {
   return (
     <section id="blog" className={styles.blog}>
       <div className="container">

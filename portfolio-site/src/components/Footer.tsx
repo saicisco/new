@@ -1,8 +1,7 @@
 // src/components/Footer.tsx
-import React from 'react';
 import styles from './Footer.module.css';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer id="contact" className={styles.footer}>
       <div className="container">
@@ -14,7 +13,7 @@ const Footer: React.FC = () => {
           <a href="mailto:Fran.pl@icloud.com" className={styles.contactLink}>Fran.pl@icloud.com</a>
         </div>
         <div className={styles.socialLinks}>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/saicisco" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/francisco-leiros/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
         <div className={styles.copyright}>
