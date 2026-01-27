@@ -82,3 +82,106 @@
     font-size: 0.9rem;
     color: #5b6078; /* Overlay0 */
 }
+
+.legalNoticeContainer {
+    margin-top: 1rem;
+}
+
+.legalNoticeButton {
+    background: transparent;
+    border: 1px solid #494d64; /* Surface2 */
+    color: #a5adce; /* Subtext0 */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.legalNoticeButton:hover {
+    background-color: #1e2030; /* Crust */
+    border-color: #8aadf4; /* Blue */
+    color: #cad3f5; /* Text */
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modalContent {
+    background-color: #1e2030; /* Crust */
+    border: 1px solid #494d64; /* Surface2 */
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: #a5adce; /* Subtext0 */
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+    background-color: #363a4f; /* Surface0 */
+    color: #ed8796; /* Red */
+}
+
+.modalHeading {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    margin-right: 2rem;
+}
+
+.legalInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.legalSection h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8aadf4; /* Blue */
+    margin-bottom: 0.5rem;
+}
+
+.legalSection p {
+    font-size: 0.95rem;
+    color: #cad3f5; /* Text */
+    line-height: 1.5;
+}
+
+.legalSection a {
+    color: #8aadf4; /* Blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legalSection a:hover {
+    color: #c6a0f6; /* Mauve */
+}
