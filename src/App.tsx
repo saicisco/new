@@ -28,7 +28,6 @@ import { Navigation, Hero } from '@/components';
 const About = lazy(() => import('@/components/About'));
 const Experience = lazy(() => import('@/components/Experience'));
 const Portfolio = lazy(() => import('@/components/Portfolio'));
-const Blog = lazy(() => import('@/components/Blog'));
 const Footer = lazy(() => import('@/components/Footer'));
 
 function App() {
@@ -41,7 +40,6 @@ function App() {
           <About />
           <Experience />
           <Portfolio />
-          <Blog />
         </Suspense>
       </main>
       <Suspense fallback={<div />}>

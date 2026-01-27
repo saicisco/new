@@ -363,6 +363,9 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
+    font-family: inherit;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -393,5 +396,125 @@
 @media (max-width: 768px) {
     .skillName {
         font-size: 0.8rem;
+    }
+}
+
+/* Skill Detail Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(30, 32, 48, 0.95); /* Crust with transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modalContent {
+    background-color: #24273a; /* Base */
+    border: 1px solid #494d64; /* Surface2 */
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalContent {
+        padding: 1.5rem;
+        max-width: 95%;
+    }
+}
+
+.modalClose {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #a5adce; /* Subtext0 */
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.modalClose:hover {
+    background-color: #363a4f; /* Surface1 */
+    color: #cad3f5; /* Text */
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.modalIcon {
+    color: #8aadf4; /* Blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #363a4f; /* Surface1 */
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+}
+
+.modalTitle {
+    font-size: 1.75rem;
+    color: #f5bde6; /* Pink */
+    font-weight: 700;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .modalTitle {
+        font-size: 1.4rem;
+    }
+}
+
+.modalDescription {
+    color: #cad3f5; /* Text */
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .modalDescription {
+        font-size: 1rem;
     }
 }

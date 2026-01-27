@@ -28,7 +28,7 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
 
       // Detect active section
-      const sections = ['about', 'experience', 'portfolio', 'blog'];
+      const sections = ['about', 'experience', 'portfolio'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -94,14 +94,6 @@ const Navigation = () => {
                 Projects
               </a>
             </li>
-            <li>
-              <a 
-                href="#blog" 
-                className={activeSection === 'blog' ? styles.active : ''}
-              >
-                Blog
-              </a>
-            </li>
           </ul>
           <button onClick={handleContactClick} className={styles.contactButton}>
             <Mail size={18} />
@@ -148,15 +140,6 @@ const Navigation = () => {
                 className={activeSection === 'portfolio' ? styles.active : ''}
               >
                 Projects
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#blog" 
-                onClick={handleLinkClick}
-                className={activeSection === 'blog' ? styles.active : ''}
-              >
-                Blog
               </a>
             </li>
           </ul>

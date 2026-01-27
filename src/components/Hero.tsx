@@ -22,36 +22,110 @@
 
 import { useState, useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
-import { Github, Linkedin, Download, Mail, BriefcaseIcon, TestTube2, Cog, Users, Target, FlaskConical, Smartphone, Wand2, Box, Code2, GitBranch, Container, CloudCog, GitMerge, Workflow, Brain, Network } from 'lucide-react';
+import { Github, Linkedin, Download, Mail, BriefcaseIcon, TestTube2, Cog, Users, Target, FlaskConical, Smartphone, Wand2, Box, Code2, GitBranch, Container, CloudCog, GitMerge, Workflow, Brain, Network, X } from 'lucide-react';
 
 interface Skill {
   name: string;
   icon: React.ReactNode;
+  description: string;
 }
 
 const skills: Skill[] = [
-  { name: "AI", icon: <Brain size={18} /> },
-  { name: "MCP's", icon: <Network size={18} /> },
-  { name: "Test Automation", icon: <TestTube2 size={18} /> },
-  { name: "Pipeline Design", icon: <Workflow size={18} /> },
-  { name: "Agile/Scrum", icon: <Users size={18} /> },
-  { name: "E2E Testing", icon: <Target size={18} /> },
-  { name: "Regression Testing", icon: <FlaskConical size={18} /> },
-  { name: "API testing", icon: <Cog size={18} /> },
-  { name: "Mobile Testing", icon: <Smartphone size={18} /> },
-  { name: "Playwright", icon: <Wand2 size={18} /> },
-  { name: "Selenium", icon: <Box size={18} /> },
-  { name: "TypeScript", icon: <Code2 size={18} /> },
-  { name: "Python", icon: <Code2 size={18} /> },
-  { name: "Docker", icon: <Container size={18} /> },
-  { name: "Azure DevOps", icon: <CloudCog size={18} /> },
-  { name: "GitHub Actions", icon: <GitMerge size={18} /> },
-  { name: "Jira", icon: <BriefcaseIcon size={18} /> },
-  { name: "Postman", icon: <GitBranch size={18} /> }
+  { 
+    name: "AI", 
+    icon: <Brain size={18} />, 
+    description: "Leveraging AI to enhance quality engineering workflows — from smarter test design to improved analysis, productivity, and automation efficiency."
+  },
+  { 
+    name: "MCP's", 
+    icon: <Network size={18} />, 
+    description: "Designing and applying Playwright MCP and Model Context Protocols to improve test orchestration, maintainability, and scalable automation architectures."
+  },
+  { 
+    name: "Test Automation", 
+    icon: <TestTube2 size={18} />, 
+    description: "Architecting and implementing scalable test automation frameworks that reduce regression effort and ensure consistent product quality."
+  },
+  { 
+    name: "Pipeline Design", 
+    icon: <Workflow size={18} />, 
+    description: "Building and integrating CI/CD pipelines that enable continuous testing and fast feedback using Azure DevOps and GitHub Actions."
+  },
+  { 
+    name: "Agile/Scrum", 
+    icon: <Users size={18} />, 
+    description: "Collaborating in Agile and Scrum teams to align testing strategies with business goals and deliver value incrementally."
+  },
+  { 
+    name: "E2E Testing", 
+    icon: <Target size={18} />, 
+    description: "Validating complete user flows across front-end and backend systems to guarantee reliability in real production-like scenarios."
+  },
+  { 
+    name: "Regression Testing", 
+    icon: <FlaskConical size={18} />, 
+    description: "Designing efficient regression strategies combining automation and manual validation to protect critical functionality on every release."
+  },
+  { 
+    name: "API testing", 
+    icon: <Cog size={18} />, 
+    description: "Validating REST APIs for correctness, performance, and data integrity using Postman and automated test frameworks."
+  },
+  { 
+    name: "Mobile Testing", 
+    icon: <Smartphone size={18} />, 
+    description: "Testing mobile applications across iOS and Android platforms to ensure functionality, usability, and cross-device consistency."
+  },
+  { 
+    name: "Playwright", 
+    icon: <Wand2 size={18} />, 
+    description: "Using Playwright with TypeScript to build fast, modern, and reliable end-to-end automation frameworks for web applications."
+  },
+  { 
+    name: "Selenium", 
+    icon: <Box size={18} />, 
+    description: "Applying Selenium with Python for cross-browser automation and integration into CI pipelines in legacy and hybrid test environments."
+  },
+  { 
+    name: "TypeScript", 
+    icon: <Code2 size={18} />, 
+    description: "Writing clean, maintainable TypeScript code to improve test reliability, readability, and long-term framework scalability."
+  },
+  { 
+    name: "Python", 
+    icon: <Code2 size={18} />, 
+    description: "Utilizing Python for test automation, API validation, data analysis, and system-level testing scenarios."
+  },
+  { 
+    name: "Docker", 
+    icon: <Container size={18} />, 
+    description: "Testing and validating containerized applications and environments to ensure consistent behavior across cloud and on-prem systems."
+  },
+  { 
+    name: "Azure DevOps", 
+    icon: <CloudCog size={18} />, 
+    description: "Managing test automation, pipelines, and releases within Azure DevOps to support continuous quality assurance."
+  },
+  { 
+    name: "GitHub Actions", 
+    icon: <GitMerge size={18} />, 
+    description: "Automating test execution and CI workflows directly from GitHub repositories for rapid and reliable feedback."
+  },
+  { 
+    name: "Jira", 
+    icon: <BriefcaseIcon size={18} />, 
+    description: "Tracking defects, test activities, and sprint progress to ensure transparency and alignment across teams."
+  },
+  { 
+    name: "Postman", 
+    icon: <GitBranch size={18} />, 
+    description: "Designing and executing API test collections to validate backend services independently from the UI."
+  }
 ];
 
 const Hero = () => {
   const [showCVDropdown, setShowCVDropdown] = useState(false);
+  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -167,12 +241,37 @@ const Hero = () => {
         {/* Skills grid with icons */}
         <div className={styles.skillsGrid}>
           {skills.map((skill, index) => (
-            <div key={index} className={styles.skill}>
+            <button 
+              key={index} 
+              className={styles.skill}
+              onClick={() => setSelectedSkill(skill)}
+              aria-label={`Learn more about ${skill.name}`}
+            >
               <span className={styles.skillIcon}>{skill.icon}</span>
               <span className={styles.skillName}>{skill.name}</span>
-            </div>
+            </button>
           ))}
         </div>
+        
+        {/* Skill Detail Modal */}
+        {selectedSkill && (
+          <div className={styles.modalOverlay} onClick={() => setSelectedSkill(null)}>
+            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+              <button 
+                className={styles.modalClose} 
+                onClick={() => setSelectedSkill(null)}
+                aria-label="Close modal"
+              >
+                <X size={24} />
+              </button>
+              <div className={styles.modalHeader}>
+                <span className={styles.modalIcon}>{selectedSkill.icon}</span>
+                <h3 className={styles.modalTitle}>{selectedSkill.name}</h3>
+              </div>
+              <p className={styles.modalDescription}>{selectedSkill.description}</p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -26,6 +26,7 @@
  */
 
 import { useState } from 'react';
+import { ChevronRight } from 'lucide-react';
 import styles from './Portfolio.module.css';
 import ProjectDetailModal from './ProjectDetailModal';
 import type { Project } from '@/types';
@@ -235,9 +236,10 @@ const Portfolio = () => {
               </div>
               <button 
                 onClick={() => handleViewProject(project)} 
-                className={styles.link}
+                className={styles.viewButton}
               >
-                View Project
+                <span>View Full Details</span>
+                <ChevronRight size={18} />
               </button>
             </div>
           ))}
