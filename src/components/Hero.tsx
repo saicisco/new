@@ -101,7 +101,7 @@ const Hero = () => {
           <div className={styles.avatarContainer}>
             <div className={styles.avatarGradient}>
               <div className={styles.avatar}>
-                <img src="/profile.jpg" alt="Francisco Perez Leiros" className={styles.avatarImage} />
+                <img src="profile.jpg" alt="Francisco Perez Leiros" className={styles.avatarImage} />
               </div>
             </div>
           </div>
