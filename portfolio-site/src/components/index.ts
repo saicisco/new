@@ -18,10 +18,12 @@
  * - Better IDE autocomplete experience
  */
 
-export { default as Navigation } from './Navigation';
-export { default as Hero } from './Hero';
-export { default as About } from './About';
-export { default as Experience } from './Experience';
-export { default as Portfolio } from './Portfolio';
-export { default as Blog } from './Blog';
-export { default as Footer } from './Footer';
+import Navigation from './Navigation.js';
+import Hero from './Hero.js';
+import About from './About.js';
+import Experience from './Experience.js';
+import Portfolio from './Portfolio.js';
+import Blog from './Blog.js';
+import Footer from './Footer.js';
+
+export { Navigation, Hero, About, Experience, Portfolio, Blog, Footer };
