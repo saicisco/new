@@ -1,3 +1,17 @@
+/**
+ * ESLint Configuration File
+ * 
+ * This file configures ESLint, the linting tool that enforces code quality and consistency.
+ * ESLint analyzes the code to find and fix problems following best practices.
+ * 
+ * Configuration includes:
+ * - JavaScript and TypeScript recommended rules
+ * - React Hooks rules to ensure proper hook usage
+ * - React Refresh plugin for fast refresh during development
+ * - Browser globals for client-side code
+ * - Ignores the 'dist' directory (build output)
+ */
+
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'

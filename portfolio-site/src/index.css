@@ -1,3 +1,19 @@
+/**
+ * index.css - Global Styles
+ * 
+ * This file contains the global CSS styles applied across the entire portfolio website.
+ * 
+ * Key features:
+ * - CSS custom properties (variables) in :root for color theming (Catppuccin Macchiato palette)
+ * - Base styles for typography, links, and headings
+ * - Smooth scroll behavior for anchor navigation
+ * - Dotted background pattern for visual interest
+ * - Responsive .container utility class with breakpoints for different screen sizes
+ * - Top padding on body to account for fixed navigation bar
+ * 
+ * Color palette uses the Catppuccin Macchiato theme for a modern, comfortable dark appearance.
+ */
+
 :root {
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

@@ -1,4 +1,5 @@
 {
+  "$comment": "TypeScript Application Configuration - Configures the TypeScript compiler for the React application source code. Includes strict type checking, path aliases (@/*), JSX support for React, and modern ES2022 features. The 'bundler' module resolution is optimized for Vite.",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2022",

@@ -1,3 +1,22 @@
+/**
+ * About.module.css - About Section Styles
+ * 
+ * This CSS module provides scoped styles for the About component.
+ * 
+ * Key features:
+ * - Darker background (Crust) to create visual separation from other sections
+ * - Centered content with max-width for optimal readability
+ * - Large, clear typography for better reading experience
+ * - Responsive adjustments for mobile devices
+ * - Generous line-height (1.7) for comfortable reading
+ * 
+ * Text alignment:
+ * - Desktop: Centered text for formal, professional look
+ * - Mobile: Left-aligned for easier mobile reading
+ * 
+ * Uses Catppuccin Macchiato Subtext0 color for body text
+ */
+
 /* src/components/About.module.css */
 .about {
     padding: 80px 0;
@@ -6,7 +25,7 @@
 
 @media (max-width: 768px) {
     .about {
-        padding: 60px 0;
+        padding: 60px 20px;
     }
 }
 
@@ -19,12 +38,13 @@
 @media (max-width: 768px) {
     .heading {
         font-size: 1.8rem;
+        margin-bottom: 1.5rem;
     }
 }
 
 .text {
     max-width: 800px;
-    margin: 0 auto 1.5rem auto; /* Added margin-bottom */
+    margin: 0 auto 1.5rem auto;
     font-size: 1.1rem;
     line-height: 1.7;
     text-align: center;
@@ -33,9 +53,11 @@
 
 @media (max-width: 768px) {
     .text {
-        font-size: 1rem;
+        font-size: 0.9rem;
         text-align: left;
         padding: 0;
-        margin: 0 0 1.5rem 0;
+        margin: 0 0 1rem 0;
+        line-height: 1.7;
+        max-width: 100%;
     }
 }

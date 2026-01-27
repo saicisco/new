@@ -1,4 +1,5 @@
 {
+  "$comment": "TypeScript Base Configuration - This is the root TypeScript configuration file that references two separate configs: one for application code (tsconfig.app.json) and one for Node.js tooling code (tsconfig.node.json). This separation allows different compiler settings for different parts of the project.",
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

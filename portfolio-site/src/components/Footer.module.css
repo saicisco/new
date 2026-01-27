@@ -1,3 +1,29 @@
+/**
+ * Footer.module.css - Footer Section Styles
+ * 
+ * This CSS module provides scoped styles for the Footer component.
+ * 
+ * Key features:
+ * - Centered layout for all content
+ * - Large, clear typography for contact information
+ * - Email link styled as a bordered button with hover effects
+ * - Social links with color transitions on hover
+ * - Subdued copyright text at the bottom
+ * - Generous padding and spacing throughout
+ * 
+ * Interactive elements:
+ * - Email link: Border and background change on hover
+ * - Social links: Color changes from Subtext0 to Mauve on hover
+ * 
+ * Color hierarchy:
+ * - Main text: Default (inherited)
+ * - Secondary text: Subtext0
+ * - Copyright: Overlay0 (most subdued)
+ * - Hover states: Blue and Mauve
+ * 
+ * Uses Catppuccin Macchiato color palette for consistency
+ */
+
 /* src/components/Footer.module.css */
 .footer {
     padding: 80px 0 40px;
@@ -31,14 +57,23 @@
     border-color: #8aadf4; /* Blue */
 }
 
-.socialLinks a {
-    margin: 0 1rem;
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.2rem;
     color: #a5adce; /* Subtext0 */
     transition: color 0.3s ease;
 }
 
-.socialLinks a:hover {
+.socialLink:hover {
     color: #c6a0f6; /* Mauve */
 }
 

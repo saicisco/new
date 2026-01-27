@@ -1,3 +1,23 @@
+/**
+ * Blog.module.css - Blog Section Styles
+ * 
+ * This CSS module provides scoped styles for the Blog component.
+ * 
+ * Current implementation:
+ * - Simple centered layout for "Coming Soon" placeholder
+ * - Large heading with clear hierarchy
+ * - Subdued text color (Subtext0) for the subheading
+ * - Standard section padding
+ * 
+ * Future expansion:
+ * - Can add styles for blog post cards
+ * - Grid/list layouts for multiple posts
+ * - Category tags, dates, read times
+ * - Hover effects and transitions
+ * 
+ * Uses Catppuccin Macchiato Subtext0 for secondary text
+ */
+
 /* Blog.module.css */
 .blog {
     padding: 80px 0;

@@ -1,3 +1,27 @@
+/**
+ * Experience.module.css - Experience Section Styles
+ * 
+ * This CSS module provides scoped styles for the Experience component.
+ * 
+ * Key features:
+ * - Card-based layout for each job position
+ * - Company logos displayed in white containers for contrast
+ * - Hover animations (translateY and box-shadow) for interactivity
+ * - Flexbox layout for logo and job details
+ * - Color-coded elements (Pink for role, Mauve for company)
+ * - Responsive logo sizes and spacing for mobile devices
+ * - Max-width container (900px) for optimal readability
+ * 
+ * Card structure:
+ * - Header: Logo + Job title, company, duration
+ * - Body: Detailed description in list format
+ * 
+ * Uses Catppuccin Macchiato color palette:
+ * - Crust background for cards
+ * - Surface2 for borders
+ * - Pink and Mauve for text highlights
+ */
+
 /* src/components/Experience.module.css */
 .experience {
     padding: 80px 0;
@@ -5,7 +29,7 @@
 
 @media (max-width: 768px) {
     .experience {
-        padding: 60px 0;
+        padding: 60px 20px;
     }
 }
 
@@ -18,6 +42,7 @@
 @media (max-width: 768px) {
     .heading {
         font-size: 1.8rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -44,7 +69,7 @@
 
 @media (max-width: 768px) {
     .card {
-        padding: 1.5rem;
+        padding: 1rem;
     }
 }
 
@@ -58,6 +83,7 @@
 @media (max-width: 768px) {
     .cardHeader {
         gap: 1rem;
+        align-items: flex-start;
     }
 }
 
@@ -76,9 +102,10 @@
 
 @media (max-width: 768px) {
     .logoContainer {
-        width: 60px;
-        height: 60px;
-        padding: 8px;
+        width: 50px;
+        height: 50px;
+        padding: 6px;
+        border-radius: 8px;
     }
 }
 
@@ -101,7 +128,8 @@
 
 @media (max-width: 768px) {
     .role {
-        font-size: 1.2rem;
+        font-size: 1.05rem;
+        margin: 0 0 0.35rem 0;
     }
 }
 
@@ -114,7 +142,8 @@
 
 @media (max-width: 768px) {
     .company {
-        font-size: 1rem;
+        font-size: 0.85rem;
+        margin: 0 0 0.35rem 0;
     }
 }
 
@@ -163,7 +192,9 @@
 
 @media (max-width: 768px) {
     .descriptionList li {
-        font-size: 0.95rem;
-        padding-left: 1.25rem;
+        font-size: 0.85rem;
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
     }
 }

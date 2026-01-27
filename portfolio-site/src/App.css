@@ -1,3 +1,10 @@
+/**
+ * App.css - App-level Component Styles
+ * 
+ * This file contains styles specific to the main App component and shared utilities.
+ * Includes the .section-padding utility class for consistent spacing across sections.
+ */
+
 /* General App Styles */
 .section-padding {
     padding: 80px 0;

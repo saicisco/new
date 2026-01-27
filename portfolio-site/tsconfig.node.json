@@ -1,4 +1,5 @@
 {
+  "$comment": "TypeScript Node Configuration - Configures the TypeScript compiler specifically for Node.js tooling files (like vite.config.ts). Uses ES2023 target and includes Node.js type definitions. This is separate from the app config because build tools run in Node.js, not the browser.",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2023",
