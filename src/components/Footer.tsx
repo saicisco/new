@@ -98,6 +98,10 @@ const Footer = () => {
                 <h3>Contact</h3>
                 <p>Email: <a href="mailto:fran.pl@icloud.com">fran.pl@icloud.com</a></p>
               </div>
+              <div className={styles.legalSection}>
+                <h3>Privacy</h3>
+                <p>This website does not collect personal data except for information voluntarily provided via email contact.</p>
+              </div>
             </div>
           </div>
         </div>
