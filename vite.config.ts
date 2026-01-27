@@ -17,7 +17,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  base: '/',
+  base: '/new/',
   plugins: [react()],
   resolve: {
     alias: {
