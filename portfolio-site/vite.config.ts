@@ -23,7 +23,7 @@ export default defineConfig({
     },
   },
   // GitHub Pages deployment config
-  // If using custom domain: set base to '/'
-  // If using github.io/repo-name: set base to '/repo-name/'
-  base: '/',
+  // Repository URL: https://github.com/saicisco/new
+  // Live site URL: https://saicisco.github.io/new/
+  base: '/new/',
 })
