@@ -149,12 +149,12 @@ const Hero = () => {
   };
 
   const handleDownloadPDF = () => {
-    window.open('/CV.pdf', '_blank');
+    window.open(`${import.meta.env.BASE_URL}CV.pdf`, '_blank');
     setShowCVDropdown(false);
   };
 
   const handleDownloadMD = () => {
-    window.open('/CV.md', '_blank');
+    window.open(`${import.meta.env.BASE_URL}CV.md`, '_blank');
     setShowCVDropdown(false);
   };
 
