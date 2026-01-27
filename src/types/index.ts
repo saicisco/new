@@ -35,7 +35,7 @@ export interface Project {
 }
 
 /**
- * Experience interface
+ * ExperienceItem interface
  * Represents a professional work experience entry
  * 
  * @property role - Job title/position
@@ -44,7 +44,7 @@ export interface Project {
  * @property description - Detailed description of responsibilities and achievements
  * @property logo - Optional path to company logo image
  */
-export interface Experience {
+export interface ExperienceItem {
   role: string;
   company: string;
   duration: string;

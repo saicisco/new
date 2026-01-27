@@ -25,9 +25,9 @@
  */
 
 import styles from './Experience.module.css';
-import type { Experience } from '@/types';
+import type { ExperienceItem } from '@/types';
 
-const experiences: Experience[] = [
+const experiences: ExperienceItem[] = [
   {
     role: "Quality Assurance Test Specialist",
     company: "Tetrapak - Modena, Italy",

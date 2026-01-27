@@ -7,6 +7,7 @@
  * Configuration includes:
  * - React plugin for JSX/TSX support
  * - Path aliases (@/ -> ./src/) for cleaner imports
+ * - Dynamic base path: '/' for dev, '/new/' for production
  * 
  * Documentation: https://vite.dev/config/
  */
@@ -16,14 +17,11 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
+  base: '/',
   plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // GitHub Pages deployment config
-  // Repository URL: https://github.com/saicisco/new
-  // Live site URL: https://saicisco.github.io/new/
-  base: '/new/',
 })
