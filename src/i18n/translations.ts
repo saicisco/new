@@ -92,7 +92,7 @@ export const translations: Record<Language, Translations> = {
       getInTouch: 'Get in Touch',
       viewWork: 'View My Work',
       downloadEnglish: 'English Version',
-      downloadSpanish: 'Spanish Version',
+      downloadSpanish: 'The markdown version',
     },
     about: {
       heading: 'About Me',
@@ -407,7 +407,7 @@ This role strengthened my ability to work in fast-paced Agile teams, ensured con
       getInTouch: 'Contactar',
       viewWork: 'Ver mi trabajo',
       downloadEnglish: 'Versión en Inglés',
-      downloadSpanish: 'Versión en Español',
+      downloadSpanish: 'La versión Markdown',
     },
     about: {
       heading: 'Sobre Mí',
