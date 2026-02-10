@@ -37,7 +37,7 @@
 
 .text {
     font-size: 1.1rem;
-    color: #a5adce; /* Subtext0 */
+    color: var(--text-muted);
     margin-bottom: 2rem;
 }
 
@@ -47,14 +47,14 @@
     font-weight: 500;
     margin-bottom: 2rem;
     padding: 0.5rem 1rem;
-    border: 1px solid #494d64; /* Surface2 */
+    border: 1px solid var(--surface2-color);
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .contactLink:hover {
-    background-color: #1e2030; /* Crust */
-    border-color: #8aadf4; /* Blue */
+    background-color: var(--bg-alt);
+    border-color: var(--accent-color);
 }
 
 .socialLinks {
@@ -69,18 +69,19 @@
     align-items: center;
     gap: 0.5rem;
     font-size: 1.2rem;
-    color: #a5adce; /* Subtext0 */
+    color: var(--text-muted);
     transition: color 0.3s ease;
 }
 
 .socialLink:hover {
-    color: #c6a0f6; /* Mauve */
+    color: var(--accent2-color);
 }
 
 .copyright {
     margin-top: 3rem;
     font-size: 0.9rem;
-    color: #5b6078; /* Overlay0 */
+    color: var(--text-muted);
+    opacity: 0.7;
 }
 
 .legalNoticeContainer {
@@ -89,8 +90,8 @@
 
 .legalNoticeButton {
     background: transparent;
-    border: 1px solid #494d64; /* Surface2 */
-    color: #a5adce; /* Subtext0 */
+    border: 1px solid var(--surface2-color);
+    color: var(--text-muted);
     padding: 0.5rem 1rem;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -99,9 +100,9 @@
 }
 
 .legalNoticeButton:hover {
-    background-color: #1e2030; /* Crust */
-    border-color: #8aadf4; /* Blue */
-    color: #cad3f5; /* Text */
+    background-color: var(--bg-alt);
+    border-color: var(--accent-color);
+    color: var(--text-color);
 }
 
 .modalOverlay {
@@ -119,8 +120,8 @@
 }
 
 .modalContent {
-    background-color: #1e2030; /* Crust */
-    border: 1px solid #494d64; /* Surface2 */
+    background-color: var(--bg-alt);
+    border: 1px solid var(--surface2-color);
     border-radius: 12px;
     padding: 2rem;
     max-width: 600px;
@@ -136,7 +137,7 @@
     right: 1rem;
     background: transparent;
     border: none;
-    color: #a5adce; /* Subtext0 */
+    color: var(--text-muted);
     cursor: pointer;
     padding: 0.5rem;
     display: flex;
@@ -147,8 +148,8 @@
 }
 
 .closeButton:hover {
-    background-color: #363a4f; /* Surface0 */
-    color: #ed8796; /* Red */
+    background-color: var(--surface-color);
+    color: var(--accent-pink);
 }
 
 .modalHeading {
@@ -166,22 +167,22 @@
 .legalSection h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: #8aadf4; /* Blue */
+    color: var(--accent-color);
     margin-bottom: 0.5rem;
 }
 
 .legalSection p {
     font-size: 0.95rem;
-    color: #cad3f5; /* Text */
+    color: var(--text-color);
     line-height: 1.5;
 }
 
 .legalSection a {
-    color: #8aadf4; /* Blue */
+    color: var(--accent-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .legalSection a:hover {
-    color: #c6a0f6; /* Mauve */
+    color: var(--accent2-color);
 }

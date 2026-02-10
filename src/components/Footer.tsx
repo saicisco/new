@@ -25,16 +25,18 @@
 import { useState } from 'react';
 import styles from './Footer.module.css';
 import { Github, Linkedin, X } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const [showLegalNotice, setShowLegalNotice] = useState(false);
 
   return (
     <footer id="contact" className={styles.footer}>
       <div className="container">
-        <h2 className={styles.heading}>Get in Touch</h2>
+        <h2 className={styles.heading}>{t.footer.heading}</h2>
         <p className={styles.text}>
-          I'm always open to discussing new opportunities and interesting projects.
+          {t.footer.subheading}
         </p>
         <div className={styles.contactLinks}>
           <a href="mailto:Fran.pl@icloud.com" className={styles.contactLink}>Fran.pl@icloud.com</a>
@@ -50,14 +52,14 @@ const Footer = () => {
           </a>
         </div>
         <div className={styles.copyright}>
-          &copy; {new Date().getFullYear()} Francisco Perez Leiros – Freelance – VAT IT 07192070824
+          {t.footer.copyright} – Freelance – VAT IT 07192070824
         </div>
         <div className={styles.legalNoticeContainer}>
           <button 
             onClick={() => setShowLegalNotice(true)} 
             className={styles.legalNoticeButton}
           >
-            Legal Notice
+            {t.footer.legalNotice}
           </button>
         </div>
       </div>
@@ -72,35 +74,35 @@ const Footer = () => {
             >
               <X size={24} />
             </button>
-            <h2 className={styles.modalHeading}>Legal Notice</h2>
+            <h2 className={styles.modalHeading}>{t.footer.legalNotice}</h2>
             <div className={styles.legalInfo}>
               <div className={styles.legalSection}>
-                <h3>Owner</h3>
+                <h3>{t.footer.legalModal.owner}</h3>
                 <p>Francisco Perez Leiros</p>
               </div>
               <div className={styles.legalSection}>
-                <h3>Legal Status</h3>
-                <p>Freelance professional (Partita IVA – Italy)</p>
+                <h3>{t.footer.legalModal.legalStatus}</h3>
+                <p>{t.footer.legalModal.legalStatusText}</p>
               </div>
               <div className={styles.legalSection}>
-                <h3>VAT Number (Partita IVA)</h3>
+                <h3>{t.footer.legalModal.vatNumber}</h3>
                 <p>IT 07192070824</p>
               </div>
               <div className={styles.legalSection}>
-                <h3>Tax Code (Codice Fiscale)</h3>
+                <h3>{t.footer.legalModal.taxCode}</h3>
                 <p>PRZFNC83H13Z600C</p>
               </div>
               <div className={styles.legalSection}>
-                <h3>Registered Office</h3>
-                <p>Verona, Italy</p>
+                <h3>{t.footer.legalModal.registeredOffice}</h3>
+                <p>{t.footer.legalModal.registeredOfficeText}</p>
               </div>
               <div className={styles.legalSection}>
-                <h3>Contact</h3>
+                <h3>{t.footer.legalModal.contact}</h3>
                 <p>Email: <a href="mailto:fran.pl@icloud.com">fran.pl@icloud.com</a></p>
               </div>
               <div className={styles.legalSection}>
-                <h3>Privacy</h3>
-                <p>This website does not collect personal data except for information voluntarily provided via email contact.</p>
+                <h3>{t.footer.legalModal.privacy}</h3>
+                <p>{t.footer.legalModal.privacyText}</p>
               </div>
             </div>
           </div>

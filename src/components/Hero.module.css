@@ -94,11 +94,11 @@
     width: 140px;
     height: 140px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #363a4f, #494d64);
+    background: linear-gradient(135deg, var(--surface-color), var(--surface2-color));
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #24273a;
+    border: 3px solid var(--bg-color);
     overflow: hidden;
 }
 
@@ -158,7 +158,7 @@
 .subtitle {
     font-size: 1.4rem;
     font-weight: 600;
-    color: #f5bde6; /* Pink */
+    color: var(--accent-pink);
     margin-bottom: 1rem;
 }
 
@@ -170,7 +170,7 @@
 
 .tagline {
     font-size: 1.15rem;
-    color: #a5adce; /* Subtext0 */
+    color: var(--text-muted);
     margin-bottom: 2rem;
     line-height: 1.6;
 }
@@ -201,17 +201,17 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem 1.2rem;
-    background-color: #363a4f; /* Surface1 */
+    background-color: var(--surface-color);
     border-radius: 8px;
-    border: 1px solid #494d64; /* Surface2 */
+    border: 1px solid var(--surface2-color);
     transition: all 0.3s ease;
     font-size: 1rem;
 }
 
 .socialLink:hover {
-    background-color: #494d64; /* Surface2 */
+    background-color: var(--surface2-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px var(--card-shadow);
 }
 
 /* CTA Buttons */
@@ -249,25 +249,26 @@
 }
 
 .primaryButton {
-    background: linear-gradient(135deg, #8aadf4, #c6a0f6);
-    color: #1e2030; /* Crust */
+    background: linear-gradient(135deg, var(--accent-color), var(--accent2-color));
+    color: var(--button-text);
 }
 
 .primaryButton:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(138, 173, 244, 0.4);
+    box-shadow: 0 8px 20px var(--card-shadow);
+    opacity: 0.9;
 }
 
 .secondaryButton {
-    background-color: #363a4f; /* Surface1 */
-    color: #cad3f5; /* Text */
-    border: 1px solid #494d64; /* Surface2 */
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--surface2-color);
 }
 
 .secondaryButton:hover {
-    background-color: #494d64; /* Surface2 */
+    background-color: var(--surface2-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px var(--card-shadow);
 }
 
 @media (max-width: 768px) {
@@ -284,10 +285,10 @@
     top: 100%;
     left: 0;
     margin-top: 0.5rem;
-    background-color: #24273a; /* Base */
-    border: 1px solid #494d64; /* Surface2 */
+    background-color: var(--bg-color);
+    border: 1px solid var(--surface2-color);
     border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 20px var(--card-shadow);
     z-index: 100;
     min-width: 200px;
     overflow: hidden;
@@ -321,7 +322,7 @@
     padding: 0.875rem 1.25rem;
     background: none;
     border: none;
-    color: #cad3f5; /* Text */
+    color: var(--text-color);
     font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
@@ -331,11 +332,11 @@
 }
 
 .dropdownItem:hover {
-    background-color: #363a4f; /* Surface1 */
+    background-color: var(--surface-color);
 }
 
 .dropdownItem:not(:last-child) {
-    border-bottom: 1px solid #363a4f; /* Surface1 */
+    border-bottom: 1px solid var(--surface-color);
 }
 
 /* Skills Grid with Icons */
@@ -353,11 +354,11 @@
 }
 
 .skill {
-    background-color: #363a4f; /* Surface1 */
+    background-color: var(--surface-color);
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
-    border: 1px solid #494d64; /* Surface2 */
+    border: 1px solid var(--surface2-color);
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -375,13 +376,13 @@
 }
 
 .skill:hover {
-    background-color: #494d64; /* Surface2 */
+    background-color: var(--surface2-color);
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px var(--card-shadow);
 }
 
 .skillIcon {
-    color: #8aadf4; /* Blue */
+    color: var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -389,7 +390,7 @@
 
 .skillName {
     font-size: 0.9rem;
-    color: #cad3f5; /* Text */
+    color: var(--text-color);
     font-weight: 500;
 }
 
@@ -425,14 +426,14 @@
 }
 
 .modalContent {
-    background-color: #24273a; /* Base */
-    border: 1px solid #494d64; /* Surface2 */
+    background-color: var(--bg-color);
+    border: 1px solid var(--surface2-color);
     border-radius: 12px;
     padding: 2rem;
     max-width: 600px;
     width: 100%;
     position: relative;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 40px var(--card-shadow);
     animation: slideUp 0.3s ease-out;
 }
 
@@ -460,7 +461,7 @@
     right: 1rem;
     background: none;
     border: none;
-    color: #a5adce; /* Subtext0 */
+    color: var(--text-muted);
     cursor: pointer;
     padding: 0.5rem;
     display: flex;
@@ -471,8 +472,8 @@
 }
 
 .modalClose:hover {
-    background-color: #363a4f; /* Surface1 */
-    color: #cad3f5; /* Text */
+    background-color: var(--surface-color);
+    color: var(--text-color);
 }
 
 .modalHeader {
@@ -483,11 +484,11 @@
 }
 
 .modalIcon {
-    color: #8aadf4; /* Blue */
+    color: var(--accent-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #363a4f; /* Surface1 */
+    background-color: var(--surface-color);
     padding: 0.75rem;
     border-radius: 8px;
     font-size: 1.5rem;
@@ -495,7 +496,7 @@
 
 .modalTitle {
     font-size: 1.75rem;
-    color: #f5bde6; /* Pink */
+    color: var(--accent-pink);
     font-weight: 700;
     margin: 0;
 }
@@ -507,7 +508,7 @@
 }
 
 .modalDescription {
-    color: #cad3f5; /* Text */
+    color: var(--text-color);
     font-size: 1.1rem;
     line-height: 1.7;
     margin: 0;

@@ -23,6 +23,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
 import { Github, Linkedin, Download, Mail, BriefcaseIcon, TestTube2, Cog, Users, Target, FlaskConical, Smartphone, Wand2, Box, Code2, GitBranch, Container, CloudCog, GitMerge, Workflow, Brain, Network, X } from 'lucide-react';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 interface Skill {
   name: string;
@@ -30,100 +31,36 @@ interface Skill {
   description: string;
 }
 
-const skills: Skill[] = [
-  { 
-    name: "AI", 
-    icon: <Brain size={18} />, 
-    description: "Leveraging AI to enhance quality engineering workflows — from smarter test design to improved analysis, productivity, and automation efficiency."
-  },
-  { 
-    name: "MCP's", 
-    icon: <Network size={18} />, 
-    description: "Designing and applying Playwright MCP and Model Context Protocols to improve test orchestration, maintainability, and scalable automation architectures."
-  },
-  { 
-    name: "Test Automation", 
-    icon: <TestTube2 size={18} />, 
-    description: "Architecting and implementing scalable test automation frameworks that reduce regression effort and ensure consistent product quality."
-  },
-  { 
-    name: "Pipeline Design", 
-    icon: <Workflow size={18} />, 
-    description: "Building and integrating CI/CD pipelines that enable continuous testing and fast feedback using Azure DevOps and GitHub Actions."
-  },
-  { 
-    name: "Agile/Scrum", 
-    icon: <Users size={18} />, 
-    description: "Collaborating in Agile and Scrum teams to align testing strategies with business goals and deliver value incrementally."
-  },
-  { 
-    name: "E2E Testing", 
-    icon: <Target size={18} />, 
-    description: "Validating complete user flows across front-end and backend systems to guarantee reliability in real production-like scenarios."
-  },
-  { 
-    name: "Regression Testing", 
-    icon: <FlaskConical size={18} />, 
-    description: "Designing efficient regression strategies combining automation and manual validation to protect critical functionality on every release."
-  },
-  { 
-    name: "API testing", 
-    icon: <Cog size={18} />, 
-    description: "Validating REST APIs for correctness, performance, and data integrity using Postman and automated test frameworks."
-  },
-  { 
-    name: "Mobile Testing", 
-    icon: <Smartphone size={18} />, 
-    description: "Testing mobile applications across iOS and Android platforms to ensure functionality, usability, and cross-device consistency."
-  },
-  { 
-    name: "Playwright", 
-    icon: <Wand2 size={18} />, 
-    description: "Using Playwright with TypeScript to build fast, modern, and reliable end-to-end automation frameworks for web applications."
-  },
-  { 
-    name: "Selenium", 
-    icon: <Box size={18} />, 
-    description: "Applying Selenium with Python for cross-browser automation and integration into CI pipelines in legacy and hybrid test environments."
-  },
-  { 
-    name: "TypeScript", 
-    icon: <Code2 size={18} />, 
-    description: "Writing clean, maintainable TypeScript code to improve test reliability, readability, and long-term framework scalability."
-  },
-  { 
-    name: "Python", 
-    icon: <Code2 size={18} />, 
-    description: "Utilizing Python for test automation, API validation, data analysis, and system-level testing scenarios."
-  },
-  { 
-    name: "Docker", 
-    icon: <Container size={18} />, 
-    description: "Testing and validating containerized applications and environments to ensure consistent behavior across cloud and on-prem systems."
-  },
-  { 
-    name: "Azure DevOps", 
-    icon: <CloudCog size={18} />, 
-    description: "Managing test automation, pipelines, and releases within Azure DevOps to support continuous quality assurance."
-  },
-  { 
-    name: "GitHub Actions", 
-    icon: <GitMerge size={18} />, 
-    description: "Automating test execution and CI workflows directly from GitHub repositories for rapid and reliable feedback."
-  },
-  { 
-    name: "Jira", 
-    icon: <BriefcaseIcon size={18} />, 
-    description: "Tracking defects, test activities, and sprint progress to ensure transparency and alignment across teams."
-  },
-  { 
-    name: "Postman", 
-    icon: <GitBranch size={18} />, 
-    description: "Designing and executing API test collections to validate backend services independently from the UI."
-  }
-];
+const skillIcons: Record<string, React.ReactNode> = {
+  ai: <Brain size={18} />,
+  mcps: <Network size={18} />,
+  testAutomation: <TestTube2 size={18} />,
+  pipelineDesign: <Workflow size={18} />,
+  agileScrum: <Users size={18} />,
+  e2eTesting: <Target size={18} />,
+  regressionTesting: <FlaskConical size={18} />,
+  apiTesting: <Cog size={18} />,
+  mobileTesting: <Smartphone size={18} />,
+  playwright: <Wand2 size={18} />,
+  selenium: <Box size={18} />,
+  typescript: <Code2 size={18} />,
+  python: <Code2 size={18} />,
+  docker: <Container size={18} />,
+  azureDevOps: <CloudCog size={18} />,
+  githubActions: <GitMerge size={18} />,
+  jira: <BriefcaseIcon size={18} />,
+  postman: <GitBranch size={18} />,
+};
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
+  // Build skills array from translations
+  const skills: Skill[] = Object.keys(t.skills).map(key => ({
+    name: t.skills[key].name,
+    icon: skillIcons[key],
+    description: t.skills[key].description,
+  }));
   const [showCVDropdown, setShowCVDropdown] = useState(false);
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -182,17 +119,17 @@ const Hero = () => {
           
           {/* Name with gradient effect */}
           <h1 className={styles.name}>
-            <span className={styles.gradientText}>Francisco Perez Leiros</span>
+            <span className={styles.gradientText}>{t.hero.name}</span>
           </h1>
           
           {/* Current role subtitle */}
           <p className={styles.subtitle}>
-            Software Quality Assurance Test Engineer
+            {t.hero.title}
           </p>
           
           {/* Tagline */}
           <p className={styles.tagline}>
-            QA Automation Engineer with over 5 years of experience specializing in architecting and deploying scalable test automation frameworks.
+            {t.hero.tagline}
           </p>
           
           {/* Social links with icons */}
@@ -212,28 +149,28 @@ const Hero = () => {
             <div className={styles.downloadButtonContainer} ref={dropdownRef}>
               <button onClick={handleDownloadCV} className={styles.primaryButton}>
                 <Download size={18} />
-                <span>Download CV</span>
+                <span>{t.hero.downloadCV}</span>
               </button>
               {showCVDropdown && (
                 <div className={styles.dropdownMenu}>
                   <button onClick={handleDownloadPDF} className={styles.dropdownItem}>
                     <Download size={16} />
-                    <span>Download PDF</span>
+                    <span>{t.hero.downloadEnglish}</span>
                   </button>
                   <button onClick={handleDownloadMD} className={styles.dropdownItem}>
                     <Download size={16} />
-                    <span>Download Markdown</span>
+                    <span>{t.hero.downloadSpanish}</span>
                   </button>
                 </div>
               )}
             </div>
             <button onClick={handleGetInTouch} className={styles.secondaryButton}>
               <Mail size={18} />
-              <span>Get in Touch</span>
+              <span>{t.hero.getInTouch}</span>
             </button>
             <button onClick={handleViewWork} className={styles.secondaryButton}>
               <BriefcaseIcon size={18} />
-              <span>View My Work</span>
+              <span>{t.hero.viewWork}</span>
             </button>
           </div>
         </div>

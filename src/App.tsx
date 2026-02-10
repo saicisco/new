@@ -20,9 +20,10 @@
  * - Footer: Contact information and social links
  */
 
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import './App.css';
 import { Navigation, Hero } from '@/components';
+import { LanguageProvider } from '@/i18n/LanguageContext';
 
 // Lazy load non-critical components
 const About = lazy(() => import('@/components/About'));
@@ -31,9 +32,23 @@ const Portfolio = lazy(() => import('@/components/Portfolio'));
 const Footer = lazy(() => import('@/components/Footer'));
 
 function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    return savedTheme || 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
+  };
+
   return (
-    <>
-      <Navigation />
+    <LanguageProvider>
+      <Navigation theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
         <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
@@ -45,7 +60,7 @@ function App() {
       <Suspense fallback={<div />}>
         <Footer />
       </Suspense>
-    </>
+    </LanguageProvider>
   );
 }
 

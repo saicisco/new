@@ -15,13 +15,24 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Mail } from 'lucide-react';
+import { Menu, X, Mail, Sun, Moon, Languages } from 'lucide-react';
 import styles from './Navigation.module.css';
+import { useLanguage } from '@/i18n/LanguageContext';
 
-const Navigation = () => {
+interface NavigationProps {
+  theme: 'light' | 'dark';
+  toggleTheme: () => void;
+}
+
+const Navigation = ({ theme, toggleTheme }: NavigationProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'es' : 'en');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,13 +80,28 @@ const Navigation = () => {
         
         {/* Desktop Navigation */}
         <div className={styles.desktopNav}>
+          <button 
+            onClick={toggleLanguage}
+            className={styles.languageToggle}
+            aria-label="Toggle language"
+          >
+            <Languages size={18} />
+            <span className={styles.langCode}>{language.toUpperCase()}</span>
+          </button>
+          <button 
+            onClick={toggleTheme}
+            className={styles.themeToggle}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <ul className={styles.navLinks}>
             <li>
               <a 
                 href="#about" 
                 className={activeSection === 'about' ? styles.active : ''}
               >
-                About
+                {t.nav.about}
               </a>
             </li>
             <li>
@@ -83,7 +109,7 @@ const Navigation = () => {
                 href="#experience" 
                 className={activeSection === 'experience' ? styles.active : ''}
               >
-                Experience
+                {t.nav.experience}
               </a>
             </li>
             <li>
@@ -91,13 +117,13 @@ const Navigation = () => {
                 href="#portfolio" 
                 className={activeSection === 'portfolio' ? styles.active : ''}
               >
-                Projects
+                {t.nav.projects}
               </a>
             </li>
           </ul>
           <button onClick={handleContactClick} className={styles.contactButton}>
             <Mail size={18} />
-            <span>Contact</span>
+            <span>{t.nav.contact}</span>
           </button>
         </div>
 
@@ -114,6 +140,22 @@ const Navigation = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className={`${styles.mobileMenu} ${styles.open}`}>
+          <button 
+            onClick={toggleLanguage}
+            className={styles.mobileLanguageToggle}
+            aria-label="Toggle language"
+          >
+            <Languages size={20} />
+            <span>{language === 'en' ? 'Español' : 'English'}</span>
+          </button>
+          <button 
+            onClick={toggleTheme}
+            className={styles.mobileThemeToggle}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            <span>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+          </button>
           <ul className={styles.mobileNavLinks}>
             <li>
               <a 
@@ -121,7 +163,7 @@ const Navigation = () => {
                 onClick={handleLinkClick}
                 className={activeSection === 'about' ? styles.active : ''}
               >
-                About
+                {t.nav.about}
               </a>
             </li>
             <li>
@@ -130,7 +172,7 @@ const Navigation = () => {
                 onClick={handleLinkClick}
                 className={activeSection === 'experience' ? styles.active : ''}
               >
-                Experience
+                {t.nav.experience}
               </a>
             </li>
             <li>
@@ -139,13 +181,13 @@ const Navigation = () => {
                 onClick={handleLinkClick}
                 className={activeSection === 'portfolio' ? styles.active : ''}
               >
-                Projects
+                {t.nav.projects}
               </a>
             </li>
           </ul>
           <button onClick={handleContactClick} className={styles.mobileContactButton}>
             <Mail size={18} />
-            <span>Contact Me</span>
+            <span>{t.nav.contact}</span>
           </button>
         </div>
       )}
